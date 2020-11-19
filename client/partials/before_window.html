@@ -1,0 +1,173 @@
+<header class="masthead" >
+    <nav class="navbar navbar-fixed-top navbar" style="background:none;" >
+        <table>
+            <div col-md-4>
+          <tr>
+               <td style="width:70px; padding-bottom:30px;">
+              <img src="https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bb9685f3d5b62368fd3576b/7c5e6b0c77cd651a271edceac6dfce95/%EB%A1%9C%EA%B3%A02.JPG" width="45" height="45" class="img-circle" text-align="left" alt="img ERR"/>
+            </td>
+            <td>
+              <a class="navbar-brand page-scroll" href='/#!/main' 
+                  style="font-size: 35px;
+                  text-transform: uppercase;
+                  color: rgb(2, 230, 116);
+                  padding: 0;
+                  font-weight: 700; 
+                  " >
+                  ras
+    
+                  <span style="font-size: 35px;
+                  text-transform: uppercase;
+                  color: black;
+                  padding: 0;
+                  font-weight: 700;">eye</span>
+    
+                  </a></td></div>
+                  </table>
+                  </nav>
+    <div class="container" ng-controller="BeforeWindowController" ng-init="init_BoardList()">
+  
+  
+    <h1>Please select a Digital Board.</h1>
+    <h5>※ A board waiting for approval can not clicked. ※</h5>
+    <br/><br/>
+    <div ng-repeat="item in items" class="item">
+       <label class="radioContainer">
+            <span class="circle"></span>
+      <input type="radio" name="boardlist" 
+      ng-model="BoardName" ng-change="windowchoose(item.Name)"
+      ng-if="item.IsApproval==1">
+            <span class="circle"></span>
+      <input type="radio" name="boardlist"  
+      ng-model="BoardName" ng-change="windowchoose(item.Name)"
+      ng-if="item.IsApproval==0" disabled > |{{item.BoardT}}|&nbsp;{{item.Name}} 
+    </label>
+    </div>
+    
+    <br/>
+
+  </div>
+  
+  <div class="container" ng-controller="BeforeWindowController">
+
+        <h1>Add a new Digital Board. </h1>
+        <h5>Select the type</h5>
+        <div class="item">
+            <label class="radioContainer">
+                    <span class="circle"></span>
+            <input type="radio"
+            ng-model="B_type" ng-change="B_typechoose()" value="CAFE"> CAFE
+            </label>
+
+            <label class="radioContainer">
+                    <span class="circle"></span>
+            <input type="radio"
+            ng-model="B_type" ng-change="B_typechoose()" value="HOUSE"> HOUSE
+            </label>
+
+            <label class="radioContainer">
+                    <span class="circle"></span>
+            <input type="radio"
+            ng-model="B_type" ng-change="B_typechoose()" value="SCHOOL"> SCHOOL
+            </label>
+        </div>
+
+
+    </div>
+    
+
+</header>
+<style>
+
+    
+header.masthead{
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-top:10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url(https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bc05861fdfef38a7f018e77/7165c025c8ead7f498ce5e76f3b93949/before_window.jpg);
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .container{
+      position: relative;
+      width: 600px;
+      height: auto;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50px;
+      border:1px solid #2aa505;
+      cursor: pointer;
+  }
+  .container h1{
+    padding-left: 60px;
+      color:white;
+      
+  }
+  .container h5{
+    padding-left: 60px;
+      font-size: 1.3em;
+      color:white;
+      
+  }
+
+  
+  .item{
+    font-size: 1.3em;
+    color:white;
+  }
+
+  .radioContainer{
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      font-size: 18px;
+      user-select: none;
+      padding-left: 100px;
+  }
+
+   .radioContainer input{
+       display: none;
+   }
+   .radioContainer .circle{
+       display: inline-block;
+       width:25px;
+       height: 25px;
+       background-color: #FF0080;
+       position: absolute;
+       left: 60px;
+       top:0;
+       border-radius: 50%;
+   }
+   .radioContainer .circlecant{
+       display: inline-block;
+       width:25px;
+       height: 25px;
+       background-color: rgb(100, 98, 99);
+       position: absolute;
+       left: 60px;
+       top:0;
+       border-radius: 50%;
+   }
+  .radioContainer input:checked + .circle{
+      background-color: #2196fc;
+  }
+  .radioContainer:hover .circle::after{
+      content: "";
+      height: 10px;
+      width:10px;
+      background-color: white;
+      position: absolute;
+      border-radius: 50%;
+      left:50%;
+      top:50%;
+      transform: translate(-50%,-50%);
+  }
+  .radioContainer .circle input .nocheck{
+    background-color: #ccc;
+    display: none;
+  }
+  </style>

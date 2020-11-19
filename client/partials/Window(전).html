@@ -1,0 +1,253 @@
+<nav class="navbar navbar-fixed-top navbar" style="background:none;">
+  <div class="container" ng-controller="WindowController" ng-init="init_Content(); ">
+
+    <table>
+      <tr>
+        <td style="width:70px; padding-bottom:30px;">
+          <img src="https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bb9685f3d5b62368fd3576b/7c5e6b0c77cd651a271edceac6dfce95/%EB%A1%9C%EA%B3%A02.JPG"
+            width="45" height="45" class="img-circle" text-align="left" alt="img ERR" />
+        </td>
+        <td>
+          <a class="navbar-brand page-scroll" href='/#!/main' style="font-size: 35px;
+            text-transform: uppercase;
+            color: rgb(2, 230, 116);
+            padding: 0;
+            font-weight: 700; 
+            ">
+            ras
+
+            <span style="font-size: 35px;
+            text-transform: uppercase;
+            color: black;
+            padding: 0;
+            font-weight: 700;">eye</span>
+
+          </a>
+        </td>
+
+
+        <!--<div class="col-md-12" style="margin-left:100px;"></div>-->
+        <!-- <div class="col-md-8"></div>-->
+        <div class="col-md-8">
+
+          <td class="header" style="font-size: 30px; font-weight:700;
+                       font-family:fantasy; width:300px; height:10px; text-align:center; ">
+            {{BoardName}} Board
+          </td>
+          <td class="td_upperbar" style="font-size:18px; width:200px; height:20px; font-family:fantasy; text-align:center; " ng-bind="Date1">{{Date1}}</td>
+          <td class="td_upperbar" style="width:30px; height:20px;  text-align:center; ">
+            <!--시간 위젯-->
+            <iframe src="http://free.timeanddate.com/clock/i6gll3r5/n235/tlkr/fn14/fs18/tct/pct/ftb/th2" frameborder="0" width="118"
+              height="23" allowTransparency="true"></iframe>
+
+          </td>
+          <!--날씨 위젯-->
+          <td class="td_upperbar" style=" height:20px; width:67px;">
+            <div id="cont_4f95078fe432946ad5ad00371f6550f5">
+              <script type="text/javascript" async src="https://www.yourweather.co.uk/wid_loader/4f95078fe432946ad5ad00371f6550f5"></script>
+            </div>
+          </td>
+
+
+        </div>
+      </tr>
+    </table>
+
+  
+      
+        <!--이미지1-->
+        <div id="image1" class="carousel slide" data-ride="carousel" data-interval="3000" style="border:6px solid #ffd1ff;">
+
+          <div class="carousel-inner" role="listbox" style="width: 1200px; height:500px; " >
+            <div class="item" data-ng-repeat="src in List_Image_src" data-ng-class="{active : $first}" >
+              <img data-ng-src="{{src}}" alt="No Image" style="width: 930px; height:500px;" />
+            </div>
+          </div>
+        </div>
+  
+
+
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+  </div>
+
+
+  <!--carousel-->
+  <script>
+    $(function () {
+      $('.carousel').carousel({
+        interval: 2000
+      })
+      $('.media-carousel').carousel({
+        pause: false,
+        interval:2000
+      })
+
+      $('#text').carousel({
+        interval:2000
+      })
+    })
+  </script>
+
+
+  <style>
+    #text>div>div>div {
+      background-color: none;
+      width: 100%;
+      height: 100%;
+      padding: 50px 50px;
+      text-align: center;
+    }
+
+    #image1>div>div {
+
+      height: 100%;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    #image2>div>div {
+
+      height: 100%;
+      text-align: center;
+    }
+  </style>
+  <!--carousel end-->
+
+
+  <style type="text/css">
+    /*table 줄 확인을 위함*/
+
+    td {
+      padding: 10px;
+      border: 1px solid white;
+    }
+
+    .b {
+      border-collapse: collapse;
+    }
+
+    /*table 줄 확인을 위함*/
+
+    /*
+              .table_width{
+                width:200px;
+              }
+            
+              .td_upperbar {
+                width: 150px
+              }*/
+
+    /*id가 img_size인 이미지 크기 설정*/
+
+    .img_size {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+    }
+
+    /*id가 slideshow인 div(검은 그림자 있는)의 크기 설정..*/
+
+    #slideshow {
+      margin: 10px auto;
+      position: relative;
+      width: 600px;
+      height: 500px;
+      padding: 10px;
+      border-bottom: 6px solid #4caf50;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /*id가 slide인 div 포함 안의 속성임.*/
+
+    #slideshow>div {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    #slideshow2 {
+      margin: 80px auto;
+      position: relative;
+      width: 600px;
+      height: 500px;
+      padding: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /*id가 slide인 div 포함 안의 속성임.*/
+
+    #slideshow2>div {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+    }
+
+
+    #text_slideshow {
+      margin: 80px auto;
+      position: relative;
+      width: 600px;
+      height: 500px;
+      padding: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    #text_slideshow>div {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    #media_slideshow {
+      margin: 80px auto;
+      position: relative;
+      width: 600px;
+      height: 500px;
+      padding: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    #media_slideshow>div {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+    }
+  </style>

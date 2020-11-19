@@ -1,0 +1,315 @@
+<nav class="navbar navbar-fixed-top navbar" style="background:none;" >
+  <div class="container" ng-controller="WindowController" ng-init="init_Content();" style="width:100%;">
+    
+  <table>
+      <div col-md-4>
+    <tr>
+         <td style="width:70px; padding-bottom:30px;">
+        <img src="https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bb9685f3d5b62368fd3576b/7c5e6b0c77cd651a271edceac6dfce95/%EB%A1%9C%EA%B3%A02.JPG" width="45" height="45" class="img-circle" text-align="left" alt="img ERR"/>
+      </td>
+      <td>
+        <a class="navbar-brand page-scroll" href='/#!/main' 
+            style="font-size: 35px;
+            text-transform: uppercase;
+            color: rgb(2, 230, 116);
+            padding: 0;
+            font-weight: 700; 
+            " >
+            ras
+
+            <span style="font-size: 35px;
+            text-transform: uppercase;
+            color: black;
+            padding: 0;
+            font-weight: 700;">eye</span>
+
+            </a></td></div>
+            <td class="col-md-6" style="margin-left:70px;">
+                
+                      <td class="header" style="font-size: 30px;
+                       font-family:fantasy; width:200px; height:10px; text-align:center; text-shadow:3px 3px 3px rgb(255, 0, 128); ">
+                        {{BoardName}} Board
+                      </td>
+                      <td class="td_upperbar" style="font-size:18px; width:20px; height:20px; font-family:fantasy; text-align:center; "  
+                      ng-bind="Date1">{{Date1}}</td>
+                <td class="td_upperbar" style="width:200px; height:20px;  text-align:center; " >
+                  <!--시간 위젯-->
+                  <iframe src="http://free.timeanddate.com/clock/i6gll3r5/n235/tlkr/fn14/fs18/tct/pct/ftb/th2" frameborder="0" width="118" height="23" allowTransparency="true"></iframe>
+      
+                </td>
+                <!--날씨 위젯-->
+                <td class="td_upperbar"  style=" height:20px; width:67px;">
+                    <div id="cont_4f95078fe432946ad5ad00371f6550f5"><script type="text/javascript" async src="https://www.yourweather.co.uk/wid_loader/4f95078fe432946ad5ad00371f6550f5"></script></div>
+                   </td>
+                  
+                  </td>
+                  </div>
+                  </tr>
+          </table>
+
+            <br/>
+            <div class="row" >
+            <div class="col-md-12" ></div>
+              <div class="col-md-4" ><!--이미지1-->
+                <div id="image1" class="carousel image-carousel" data-ride="carousel" data-interval="5000">
+               
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item" data-ng-repeat="src in List_Image1_src" data-ng-class="{active : $first}" >
+                            <img class="img-reponsive" data-ng-src="{{src}}" alt=" carousel {{$index}}" style="width:100%; height:730px; "  />
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <!--동영상-->
+              <div class="col-md-7">
+                <div id="media"  class="carousel media-carousel" data-ride="carousel" data-wrap="true" 
+                 data-interval="auto" >
+              
+                    <div class="carousel-inner" role="listbox">
+                        
+                            <div class="item" data-ng-repeat="src in List_Media_src" data-ng-class="{active : $first}">
+                                <video data-ng-src="{{src}}" alt=" carousel {{$index}}"  style="width:100%; height:60%; border:3px solid #000000; "  
+                                 preload="none" controls="controls" autoplay loop/>
+                            </div>
+                       </div>
+                   </div>
+              </div>
+
+              <!--텍스트-->
+              
+                <div class="col-md-3" style=" height:300px;"><!--텍스트-->
+                  <div id="text" class="carousel text-carousel" data-ride="carousel" data-interval="5000" >
+                
+                      <div class="carousel-inner" role="listbox"> 
+                                    
+                          <div class="item" data-ng-repeat="M in List_Text1_src" data-ng-class="{active : $first}" >
+                            <div container> 
+                                <h3 class="t_title" alt="carousel {{$index}}" style="font-weight: bolder;" >{{M.Title}} </h3>
+                              <h4 class="t_main"alt=" carousel {{$index}}" style="width:100%;  overflow:hidden; height:80%; " > {{M.Main}}</h4>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4" style=" height:300px; "><!--텍스트 style="border:3px solid #ffab2e;-->
+                  <div id="text1" class="carousel text-carousel" data-ride="carousel" data-interval="5000" >
+                
+                      <div class="carousel-inner" role="listbox"> 
+                                    
+                          <div class="item" data-ng-repeat="M in List_Text2_src" data-ng-class="{active : $first}" >
+                            <div container> 
+                                <h3 class="t_title" alt="carousel {{$index}}" style="font-weight: bolder;" >{{M.Title}} </h3>
+                              <h4 class="t_main"alt=" carousel {{$index}}" style="width:100%;  overflow:hidden; height:80%; " > {{M.Main}}</h4>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                </div>
+
+                <!--
+                <div class="col-xs-1" >
+                  <div class="image" style="padding-top:100px; width:200px; height:200px;" >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_of_hongik_university.jpg" 
+                    width="200px" height="200px" alt="logo"/>
+                  </div>
+                </div>
+                </div>-->
+
+              
+              
+              <!--carousel-->
+              <script>
+                $(function () {
+                  $('.image-carousel').carousel({
+                  interval: 5000
+                  })
+                  $('.media-carousel').carousel({
+                      pause: false,
+                      interval: 60000
+                  })  
+                  $('.text-carousel').carousel({
+                      pause: false,
+                      interval: 3000
+                  })  
+              
+                })
+              </script>
+              
+              
+              <style>
+                #text
+                {
+                  background: rgb(238, 250, 104);
+                  border-radius: 10px;
+                  opacity: .8;
+                }
+
+                #text::before{
+                  border-top:20px solid  rgb(238, 250, 104);
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-bottom: 0 solid transparent;
+                  content: "";
+                  position: absolute;
+                  top:100%;
+                  left: 200px;
+                }
+                #text > div > div > div{
+                  background-color: none; 
+                  width:100%; 
+                  height:80%; 
+                  padding:10px 10px;
+                  padding-bottom: 10px;
+                  text-align:center;
+                }
+
+                 #text1
+                {
+                  background: rgb(169, 241, 160);
+                  border-radius: 10px;
+                  opacity: .8;
+                }
+
+                #text1::before{
+                  border-top:20px solid  rgb(169, 241, 160);
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-bottom: 0 solid transparent;
+                  content: "";
+                  position: absolute;
+                  top:100%;
+                  left: 200px;
+                }
+                #text1 > div > div > div{
+                  background-color: none; 
+                  width:100%; 
+                  height:80%; 
+                  padding:10px 10px;
+                  padding-bottom: 10px;
+                  text-align:center;
+                }
+              
+                #image1 > div > div{
+                  height: 100%;
+                  text-align: center;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+                }
+            
+                #image2 > div > div{
+                  padding: 50px 50px 50px;
+                  height: 100%;
+                  text-align: center;
+                  }
+                  
+              </style>
+              <!--carousel end-->
+            
+            
+            <style type="text/css">
+            /*table 줄 확인을 위함*/
+                  td {
+                    padding: 10px;
+                    border: 1px solid white;
+                  }
+                  .b {
+                    border-collapse: collapse;
+                  }
+            
+            /*table 줄 확인을 위함*/
+            
+            /*
+              .table_width{
+                width:200px;
+              }
+            
+              .td_upperbar {
+                width: 150px
+              }*/
+            
+              /*id가 img_size인 이미지 크기 설정*/
+            
+              .img_size {
+                width: 100%;
+                height: 100%;
+                background-size: contain;
+              }
+            
+              /*id가 slideshow인 div(검은 그림자 있는)의 크기 설정..*/
+            
+              #slideshow {
+                margin: 10px auto;
+                position: relative;
+                width: 600px;
+                height: 500px;
+                padding: 10px;
+                border-bottom:6px solid #4caf50;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+              }
+            
+              /*id가 slide인 div 포함 안의 속성임.*/
+            
+              #slideshow >div {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+              }
+            
+              #slideshow2 {
+                margin: 80px auto;
+                position: relative;
+                width: 600px;
+                height: 100px;
+                padding: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+              }
+            
+              /*id가 slide인 div 포함 안의 속성임.*/
+            
+              #slideshow2 >div {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+              }
+            
+            
+              #text_slideshow {
+                margin: 80px auto;
+                position: relative;
+                width: 600px;
+                height: 300px;
+                padding: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+              }
+            
+              #text_slideshow >div {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+              }
+            /*
+                 #media_slideshow {
+                margin: 80px auto;
+                position: relative;
+                width: 600px;
+                height: 500px;
+                padding: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+              }
+            
+              #media_slideshow >div {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+              }*/
+            </style>                     

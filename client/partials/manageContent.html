@@ -1,0 +1,81 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="content-wrapper" style="background-color:white;" >
+    <div class="container">
+
+<!-- Main content -->
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+       
+<section class="content" ng-controller="BoardController" ng-init="init()">
+ <br/>
+ 
+ <div class="row">
+    <div class="box box-widget" style="background-image:url(https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bbf2695aa433076f6b4ec45/7226cd8946dc2e8f24b0962acefb4808/1.gif);
+        background-repeat:no-repeat;
+        text-align:center;">
+        <br/>
+        <br/>
+    <div class="box-header with-border">
+                  <h1>Board List</h1>
+                  <br/>
+                  <br/><br/>
+    </div> <!-- /.box-tools -->
+
+            
+            <div ng-repeat="item in items" ng-switch on="item.IsApproval">
+              <div ng-switch-when="1">
+                <div class="card"  >
+                  <div class="col-md-6" >
+                    <div class="box box-warning" style="border:2px solid #4caf50;">
+                      <div class="row">
+                        <!-- row start -->
+                        <div class="col-sm-12 border-right">
+                          <h2 class="card-header" ng-bind="item.Name"></h2>
+                          <h1 align='center'>
+                          <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZDUCFfBTz6j7I1de5pbOYwiOVyGlKgRCHLdQiiDt7jb-Phwye" alt="Card image"></h1>
+                            <div class="card-body">
+                              <h3 class="card-title" ng-bind="item.Location"></h3>
+                              <p class="card-text">Some example text.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 border-right">
+                          <div class="description-block">
+                            <div class="col-sm-3 border-right">
+
+                              <button class="btn btn-block bg-aqua btn-sm"
+                                      ng-click="togo(item.Name,'all')">모아보기</button>
+                            </div>
+                            
+                            <div class="col-sm-3 border-right">
+                                <button class="btn btn-block bg-maroon btn-sm"
+                                    ng-click="togo(item.Name,'text')">텍스트</button>
+                            </div>
+                                
+                            <div class="col-sm-3 border-right">
+                                <button class="btn btn-block bg-olive btn-sm"
+                                ng-click="togo(item.Name,'image')">이미지</button>
+                            </div>
+                            
+                            <div class="col-sm-3 border-right">
+                                <button class="btn btn-block bg-yellow btn-sm"
+                                ng-click="togo(item.Name,'video')">동영상</button>
+                            </div>
+                          </div>  <!-- /.description-block -->
+                           
+                        </div> <!-- /.col -->
+                      </div><!-- /.row -->
+                    </div> <!--/.box box-warning-->
+                  </div> <!--/.col-md-6-->
+                </div> <!--/.card-->
+              </div> <!--/.ng-switch-when="1"-->
+            </div> <!--/.ng-repeat-->
+          </div> <!--/.row-->
+        </section>
+    </div>
+  </div>

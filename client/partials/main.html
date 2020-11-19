@@ -1,0 +1,181 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'"></header>
+<header class="masthead text-center text-white d-flex"  ng-controller="MainController" ng-init="loading()">
+<div class="container my-auto">
+  <div class="row">
+    <div class="col-lg-10 mx-auto" >
+      <br/><br/><br/><br/><br/><br/>
+      <h1 class="textuppercase">
+        <strong style="font-size:1.5em;">Welcome to</strong>
+        <strong style="color: rgb(2, 230, 116); font-size:2em;">R</strong>
+        <strong style="color: rgb(212, 0, 81); font-size:2em;" >A</strong>
+        <strong style="color: rgb(2, 230, 116); font-size:2em;">S</strong>
+        <strong style="font-size:1.5em;">EYE</strong>
+      </h1>
+      </div>
+
+      <!--Login 안했을때-->
+      <div class="col-lg-8 mx-auto" ng-if="isLogin == false" >
+        <p class="text-faded mb-5"><h1>Start right now</h1></p>
+        <button class="btn btn-lg" ng-click="Login()" style="background:linear-gradient(-45deg,#fc0075,#ff00ea,#ff83c1);"> Log in now
+            <i class="fa fa-fw fa-arrow-right"></i></button>
+      </div>
+      
+      <!--Login 했을때-->
+      <div class="col-lg-8 mx-auto" ng-if="isLogin">
+          <p class="text-faded mb-5"><h1>Select the menu</h1></p>
+    </div>
+
+  </div>
+</div>
+<br/><br/><br/><br/><br/><br/>
+</header>
+
+<style>
+  header.masthead{
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-top:10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url(https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bbf2695aa433076f6b4ec45/104bfea4d891726d83c615a6fbfbb140/main.jpg);
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .text-white{
+    color:white;
+  }
+  .text-center{
+    text-align:center;
+  }
+</style>
+<!--
+<section id-"banner" style="padding: 14em 0 12em 0;
+    background-image:url(https://blogfiles.pstatic.net/MjAxODEwMTBfMTE1/MDAxNTM5MTQ5OTYzNzA3.pze7ATNMcrIWY3A75Q92NZq8IpTtaN3VIl5OcvyOPOMg.VkOxZfh369a7PbvElKZyX5RwIecZJ8PooyUa0Fs-pacg.JPEG.hey749/%EA%B7%B8%EB%A6%BC5.jpg);
+    background-size: cover;
+    background-position: center top;
+    padding-bottom:70%;
+		background-repeat: no-repeat;
+    text-align: center;">
+
+  <div class="content"  ng-if="isLogin == false">
+    <h1 style="font-size:3em;
+    color:white; line-height:1em;
+    margin:0 0 0.5em 0;
+    padding:0;">
+    Welcome to RAS-EYE</h1>
+
+    <p style="font-size: 1.25em;
+    margin-bottom: 1.75em;">
+    "start right now"</p>
+    <ul class="actions">
+        <button type="button" class="btn btn-info btn-lg" ng-click="Login()">
+            Log in now
+            <i class="fa fa-fw fa-arrow-right"></i>
+      </button>
+    </ul>
+    </div>
+
+    <div class="content"  ng-if="isLogin">
+        <h1>Welcome to RAS-EYE</h1>
+        <p>"Select the menu"</p>
+        </div>
+</section>-->
+<!--
+<body style="margin:0;">
+<div class="cover" ng-controller="MainController" style="background-image:url(https://blogfiles.pstatic.net/MjAxODEwMTBfMTAg/MDAxNTM5MTQ3NjExMjgy.6u3obn7xbLY3vDevp8WViXqaqlrSNKTz8OA4bkVa-T0g.3YTfaFvA8OFz25YTNm7V-fTyW8c8zzwbj-R3-xdQyPAg.JPEG.hey749/%EA%B7%B8%EB%A6%BC4.jpg);
+height:100vh;
+background-repeat:no-repeat;
+background-size:cover;
+width:100%;
+display:table;">
+
+<header>
+    <div class="row blend" ng-if="isLogin == false" >
+        <button type="button" class="btn btn-info btn-lg" ng-click="Login()"  style=" 
+        margin-top:30%; position: fixed; ">
+          Log in now
+          <i class="fa fa-fw fa-arrow-right"></i>
+        </button>
+      </div>
+</header>-->
+<!--
+  <div class="cover-inner" ng-controller="MainController" style="position: relative; overflow:hidden; height:750px;" >
+  -->
+
+  <!--오른쪽 row별로 이미지, 텍스트 넣기  배경만 opacity-->
+  <!--
+  <div class="col-md-12"></div>
+  <div class="col-md-5"></div>
+  <div class="col-md-2">
+  <br/><br/><br/><br/>
+  
+    <div class="row blend" ng-if="isLogin == false" >
+      <button type="button" class="btn btn-info btn-lg" ng-click="Login()"  style=" 
+      margin-top:30%; position: fixed; ">
+        Log in now
+        <i class="fa fa-fw fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <div class="row blend" ng-if="isLogin" style="background:url(https://blogfiles.pstatic.net/MjAxODEwMTBfMjA1/MDAxNTM5MTQ1MDY5NzM3.XWu9myQwd501CGXiJ7otLP9ePESPdIWtZt1exozaS8Yg.32ocdhwE0-ggaOd8jlVdvVDCtwVptm_bobM9ryQ_ydkg.JPEG.hey749/%EB%A9%94%EC%9D%B81.jpg);
+              text-align: center;
+              background-size: contain;
+              max-width: 100%; 
+              height: 0;
+              padding-bottom:70%;"> 
+    </div>
+  </div>
+  </div>
+</body>
+<style>
+  .blend {
+    font-size: 4rem;
+    font-family:fantasy;
+    color:black;
+
+  }
+  .dark {
+    font-size: 3rem;
+    font-family:cursive;
+    color:black;
+
+  }
+  
+</style>-->
+<!--
+    mix-blend-mode: screen;-->
+<!--
+<div class="content-wrapper" style="background-image: url(https://cdn.pixabay.com/photo/2018/04/06/11/21/office-3295561__340.jpg);
+    background-repeat:no-repeat; 
+    background-size:cover; background-position: center;">-->
+  <!-- Main content -->
+<!--
+  <section id="banner" ng-controller="MainController" ng-init="loading()" style="background-image:url(https://cdn.pixabay.com/photo/2016/11/19/15/32/business-1839876_1280.jpg);
+    padding: 14em 0 12em 0;
+    background-size:cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    text-align: center;
+    opacity: 1;">
+    <div class="content" ng-if="isLogin == false">
+        <h1 style="color:#25a2c3;
+        margin: 0 0 0.5em 0;
+			  padding: 0;" >Welcome to Dachshund</h1>
+        <p style="margin-bottom: 1.75em;">지금 바로 시작하세요.</p>
+        <ul class="actions">
+            <a href="/#!/Login" class="button scrolly">Get Started</a>
+            <i class="fa fa-fw fa-arrow-right"></i>
+          </ul>
+				</div>
+
+      <div class="content" ng-if="isLogin">
+          <h1>Welcome to Dachshund</h1>
+          <p>메뉴를 선택하세요.</p>
+          </div>-->
+          <!-- /.box-footer -->
+        <!-- /.box -->
+    <!-- /.col -->

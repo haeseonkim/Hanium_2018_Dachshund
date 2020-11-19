@@ -1,0 +1,103 @@
+<!--
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'"></header>
+
+<div id="loading"><img id="loading-image" src="https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5b6abbdd391cec186c522199/197e2145f1fc27830eee291fd11f4bce/%EA%B7%B8%EB%A6%BC3.png" width="45" height="45" class="img-circle" alt="Loading..." />
+<i class ="fa fa-refresh fa-spin"></i>
+</div>-->
+<meta http-equiv="refresh" content="3;url=#!/main" />
+
+<!--
+<body onload="OnloadEvent()">-->
+
+      
+      <!--Loader Animation
+      <div id="loading" onload="loading()" ng-controller="MainController">-->
+          <div class="image" alt="Loading..."
+          data-text="Loading...">    
+          <style>
+          body{
+          background-image: url(https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bb9685f3d5b62368fd3576b/97f52711e63dc9ab0448248022605935/%EB%A1%9C%EB%94%A9.gif);
+          background-repeat: no-repeat; 
+          height:100%;  
+          text-align:center; 
+          content:attr(data-text);
+          background-position : center center; 
+          background-attachment : fixed;
+          
+          }
+          
+          image.text{ 
+            position: absolute;
+            color:black;
+            padding: 8px;
+            content:attr(data-text);
+            font-size:10px;
+            text-align:center;
+          }
+          </style> 
+          <!--Loading...글씨 어디다 씀...????
+          <div class="image.text" data-text="Loading..."></div>-->
+          </div>
+          
+           <!--   <img src ="https://blogfiles.pstatic.net/MjAxODA5MzBfMjk3/MDAxNTM4Mjg0NjA5MTk3.wI91ChimGRC7t2wZvWy2V1Z6zwiTra1sP4N0YamNG-4g.u1yvRdsfIQ_uiTnMMwuJLOhFosktS_3TF9eZmv63wP0g.GIF.hey749/%EB%B0%B0%EA%B2%BD%ED%8F%AC%ED%95%A8.gif"/>
+          
+          </div>style="
+  background-image: URL(https://blogfiles.pstatic.net/MjAxODA5MjdfNDIg/MDAxNTM4MDUyMjM2OTM2.0vm9W65DlZE046o7LXnwjrY05fBDWuzG8_XHHRPs9F0g.xtR-dFxEdWLa2xoJk8PWOrv4Ws5UN_qQKdDAM4XVeqEg.JPEG.hey749/%EB%B0%B0%EA%B2%BD11.jpg);
+  
+  background-repeat: no-repeat; height:100%; background-size:cover; text-align:center; background-position : center center; background-attachment : fixed;">
+          </div>-->
+          
+              
+  
+      <!--End Loader Animation-->
+      <!--
+      <script src="main.html"></script>
+      <script type="text/javascript">
+      var Loading=document.getElementById('loading');
+          
+  
+          //Show Page main after 3s
+          function OnloadEvent() {
+              Loading = setTimeout(showpage, 4000)
+              console.log('로딩');
+              loading()
+          }
+  
+          //Hide animation loader and show page main
+          function showpage() {
+              document.getElementById("loading").style.display = "none";
+              document.getElementsByClassName("content").style.display="block";
+          }
+  /*
+    $(window).load(function() {
+      var Start;
+      Start= setTimeout(showpage,3000)
+       $('#loading').hide();
+      }); */
+     
+      </script>-->
+<!--
+      <script>
+        //document.getElementById("loading").onload=function(){
+          $(document).ready(function(){
+          function OnloadEvent(){
+            setTimeout("location.href='http://www.naver.com/'",2000);
+
+        //window.onload=function loading(){
+         //var Loading=document.getElementById('loading');
+          var Start;
+         Start = setTimeout('showpage()', 2000)
+        }
+        });
+        function showpage() {
+        document.getElementById("loading").style.display = "none";
+        newInvite();
+        location.href='http://www.naver.com/';
+        location='partials/main.html';
+        window.open("main.html");
+        //window.location.href = "main.html";
+        //document.getElementsByClassName("content").style.display="block";
+          }
+        
+      </script>-->
+      

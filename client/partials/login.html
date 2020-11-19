@@ -1,0 +1,157 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<header class="masthead" >
+
+<div class="login-box" ng-controller="LoginController">
+  <div class="login-logo">
+  <h1>LOGIN</h1>
+        <div class="textbox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text"
+                class="form-control"
+                id="userid"
+                placeholder="초기ID: admin"
+                ng-model="user.userId"
+                ng-change="clearError()"
+                required>
+        </div>
+        <div class="textbox">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                ng-model="user.password"
+                ng-change="clearError()"
+                required>
+        </div>
+        <input class="btn" type="button" value="Sign In"
+        ng-click="actionLogin()">      
+
+        <input class="btn" type="button"  value="New Password"
+        ng-click="resetPassword()">
+    </div>
+  </div>
+</div>
+<!-- /.login-box -->
+</header>
+
+
+<style>
+    header.masthead{
+      height: 100vh;
+      min-height: 650px;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-top:10rem;
+      padding-bottom: calc(10rem - 56px);
+      background-image: url(https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5bbf2695aa433076f6b4ec45/b96efe372c918ac86af9398cf0de0792/login.jpg);
+      background-position: center center;
+      background-size: cover;
+    }
+  .login-box{
+      width:280px;
+      position: absolute;
+      top:40%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      color:white;
+  }
+  .login-box h1{
+      float:left;
+      font-size:40px;
+      border-bottom:6px solid #4caf50;
+      margin-bottom: 50px;
+      padding:13px 0
+  }
+  .textbox{
+      width:100%;
+      overflow:hidden;
+      font-size: 20px;
+      padding:8px 0;
+      margin:8px 0;
+      border-bottom: 1px solid #4caf50;
+  }
+  .textbox i{
+      width:26px;
+      float:left;
+      text-align:center;
+  }
+
+  .textbox input{
+      border:none;
+      outline:none;
+      background:none;
+      color:white;
+      font-size:18px;
+      width:80px;
+      float: left;
+      margin:0 10px;
+  }
+
+  .btn{
+      width:100%;
+      background:none;
+      border:2px solid #4caf50;
+      color:white;
+      padding:5px;
+      font-size: 18px;
+      cursor:pointer;
+      margin:12px 0;
+  }
+  </style>
+
+
+
+  <!-- /.login-logo -->
+  <!--
+  <div class="login-box-body">
+        <img class="img-responsive pad" src="/lib/admin-lte/dist/img/photo2.png" alt="Photo">
+
+        <form id="sign_in" method="post">
+            <div class="form-group has-feedback">
+                <input type="text"
+                       class="form-control"
+                       id="userid"
+                       placeholder="초기ID: admin"
+                       ng-model="user.userId"
+                       ng-change="clearError()"
+                       required>
+                <span class="glyphicon glyphicon-envelop form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password"
+                       class="form-control"
+                       id="password"
+                       placeholder="Password"
+                       ng-model="user.password"
+                       ng-change="clearError()"
+                       required>
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-12 text-center text-danger"  ng-show="error">
+                        <strong data-ng-bind="error"></strong>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <button type="button" 
+                            class="btn btn-default btn-flat" 
+                            ng-click="actionLogin()">OK</button>
+                </div>-->
+                <!-- /.col -->
+<!--
+                <div class="col-xs-4">
+                    <button type="button" 
+                            class="btn btn-primary btn-block btn-flat" 
+                            ng-click="resetPassword()">비번변경</button>
+                </div>-->
+                <!-- /.col -->
+                <!--
+            </div>
+        </form>
+  </div>-->
+  <!-- /.login-box-body -->
+  
